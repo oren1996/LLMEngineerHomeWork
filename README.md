@@ -45,7 +45,27 @@ This project implements a conversational agent (chatbot) using the OpenAI API to
 
 
 ## Evaluation
-Run the evaluation script to test the chatbot's accuracy and relevance.
+Run the evaluation script to test the chatbot's accuracy.
    ```bash
    streamlit run evaluation.py
    ```
+
+## Note
+If you want to check the relevance of the chatbot's responses or the user satisfaction, go to the evaluation.py file and comment out those lines: <br>
+1) lines 8 and 9:
+```python
+# final_rating, final_sentiment = evaluate_user_satisfaction()
+# final_relevance = evaluate_relevance()
+```
+
+2) lines 15, 18 and 19:
+```python
+# Calculate and print average relevance rating
+# print(f"Average Relevance Rating: {final_relevance:.2f}/5")
+
+# Calculate and print average relevance rating
+# print(f"Average User Rating: {final_rating:.2f}")
+# print(f"Average Sentiment: {final_sentiment:.2f}")
+```
+
+then run the evaluation script again and follow the instructions.

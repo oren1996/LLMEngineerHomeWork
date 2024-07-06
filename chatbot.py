@@ -35,7 +35,8 @@ Here are the types of requests you can handle and the answer you should return f
 
 3. 'request human representative' -> If the user asks to talk to a human, superior, or mentions any keywords like "talk to a person," "speak to a manager," or "contact support," ask for their full name, email, phone number.
 
-4. 'contact information' -> Extract the full name, email, and phone number provided by the user input. Output in the format "4-" followed by the available information with appropriate labels. For example, if only email and phone number are provided, output "4- Email: "email", Phone: "phone". If all three are provided, output "4- Name: "name", Email: "email", Phone: "phone". Ensure the format is correct based on the provided information.
+4. 'contact information' ->  Extract the full name (if present), email address (if present), and phone number (if present) from the user input. Output ALWAYS IN THE FORMAT: "4-" followed by the available information with appropriate labels.
+                             For example, if only name is provided, output ONLY IN THIS FORMAT: "4- Name: "name"". If all three are provided, output "4- Name: "name", Email: "email", Phone: "phone"". Ensure the format is correct based on the provided information.
 
 5. 'return policy' -> Output ONLY in this format: "5- return policy".
 
@@ -58,7 +59,7 @@ def get_openai_response(messages):
         model="gpt-3.5-turbo",
         messages=messages,
         temperature=0,
-        max_tokens=50,
+        max_tokens=100,
     )
     return response.choices[0].message.content
 

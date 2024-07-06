@@ -50,7 +50,7 @@ def process_contact_information(user_input):
             with open(filename, mode="a", newline="") as file:
                 writer = csv.writer(file)
                 writer.writerow([name, email, phone])
-            return "Contact information saved successfully. Is there anything else i can do ?"
+            return "Contact information saved successfully.\nIs there anything else i can do ?"
     else:
         return "I'm sorry, but I need your full name, email, and phone number to connect you with a human representative. Can you please provide that information?"
 
